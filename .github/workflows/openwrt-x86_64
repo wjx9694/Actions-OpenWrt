@@ -1,8 +1,12 @@
 name: OpenWrt Builder
 
 on:
-  repository_dispatch:
   workflow_dispatch:
+    inputs:
+      FORMAT:
+        type: boolean
+        description: '勾选则执行完全干净的构建（类似格式化）'
+        default: false
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
